@@ -1,5 +1,24 @@
 import java.util.Scanner;
 public class maincode {
+    public static double sumOfTheNumbersWithOddIndex(int[]arr){
+        double sum=0;
+            for (int i=0;i<arr.length;i++){
+                if(i%2!=0){
+                    sum+=arr[i];
+                }
+            }
+            return sum;
+    }
+
+    public static double sumOfTheNumbersWithEvenIndex(int[]arr){
+        double sum=0;
+            for (int i=0;i<arr.length;i++){
+                if(i%2==0){
+                    sum+=arr[i];
+                }
+            }
+            return sum;
+    }
 
      public static int[] createArray(int a)
     {
@@ -34,7 +53,8 @@ public class maincode {
                 findaverage(array);
             }
             if(choice == 4){
-                findsum(array);
+                sumOfTheNumbersWithEvenIndex(array);
+                 sumOfTheNumbersWithOddIndex(array);
             }
             if(choice > 5 || choice <= 0){
                 System.out.println("Please enter a valid choice");
