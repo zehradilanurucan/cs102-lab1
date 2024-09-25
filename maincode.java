@@ -1,5 +1,23 @@
 import java.util.Scanner;
 public class maincode {
+    public static int findMinimum(int[] array){
+    int min = array[0];
+    for(int i  = 0; i< array.length; i++){
+        if(array[i]< min){
+            min = array[i];
+        }
+    }
+    return min;
+}
+public static int findMaximum(int[] array){
+    int max = array[0];
+    for(int i  = 0; i< array.length; i++){
+        if(array[i]< max){
+            max = array[i];
+        }
+    }
+    return max;
+}
     public static double sumOfTheNumbersWithOddIndex(int[]arr){
         double sum=0;
             for (int i=0;i<arr.length;i++){
@@ -44,10 +62,10 @@ public class maincode {
             System.out.print("Enter your choice: ");
             choice = scan.nextInt();
             if(choice == 1){
-                findmin(array);
+                findMinimum(array);
             }
             if(choice == 2){
-                findmax(array);
+                findMaximum(array);
             }
             if(choice == 3){
                 findaverage(array);
