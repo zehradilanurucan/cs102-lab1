@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.*;
 public class maincode {
      public static int[] findDifferences(int[] array){
         int sum = 0;
@@ -9,10 +11,11 @@ public class maincode {
             sum += array[i];
         }
         average = sum / count;
+        System.out.println("Avarage is: "+average);
         //ortalamayla olan farkların olduğu yeni bir array oluşturur
         int[] differences = new int[count];
         for (int i = 0; i < count; i ++){
-            differences[i] = average - array[i];
+            differences[i] =array[i] - average  ;
         }
 
         return differences;
@@ -29,7 +32,7 @@ public class maincode {
 public static int findMaximum(int[] array){
     int max = array[0];
     for(int i  = 0; i< array.length; i++){
-        if(array[i]< max){
+        if(array[i]> max){
             max = array[i];
         }
     }
@@ -79,17 +82,17 @@ public static int findMaximum(int[] array){
             System.out.print("Enter your choice: ");
             choice = scan.nextInt();
             if(choice == 1){
-                findMinimum(array);
+                System.out.println(findMinimum(array));
             }
             if(choice == 2){
-                findMaximum(array);
+                System.out.println(findMaximum(array));
             }
             if(choice == 3){
-                findDifferences(array);
+                System.out.println(""+findDifferences(array));
             }
             if(choice == 4){
-                sumOfTheNumbersWithEvenIndex(array);
-                 sumOfTheNumbersWithOddIndex(array);
+                System.out.println("Sum of the even indexes is: "+sumOfTheNumbersWithEvenIndex(array));
+                System.out.println("Sum of the odd indexes is: "+sumOfTheNumbersWithOddIndex(array));
             }
             if(choice > 5 || choice <= 0){
                 System.out.println("Please enter a valid choice");
